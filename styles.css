@@ -79,3 +79,36 @@ main{
 .contenido.active{
     display: block;
 }
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+table, th, td{
+    border: 1px solid #ddd;
+}
+th,td{
+    padding: 8px;
+    text-align: left;
+}
+th{
+    background-color: #4caf50;
+}
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+tr:hover{
+    background-color: #ddd;
+}
+.btn-editar{
+    background-color: #ffd700;
+}
+.btn-editar:hover{
+    background-color: #ffc107;
+}
+.btn-eliminar{
+    background-color: #ff6347;
+}
+.btn-eliminar:hover{
+    background-color: #ff4500;
+}

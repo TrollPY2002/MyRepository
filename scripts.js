@@ -40,4 +40,36 @@ document.addEventListener("DOMContentLoaded",function(){
         contenedorEstudiantes.classList.remove("active")
     });
 
+    function agregarFila(tabla, id, nombre){
+        var row=tabla.insertRow();
+        var cellId= row.insertCell(0);
+        var cellNombre = row.insertCell(1);
+        var cellAcciones= row.insertCell(2);
+
+        cellId.textContent = id;
+        cellNombre.textContent=nombre;
+        cellAcciones.innerHTML='<button class="btn-editar">Editar</button> <button class="btn-eliminar">Eliminar</button>';
+    }
+    var tablaEstudiantes = document.querySelector("#contenedorEstudiantes table tbody");
+    var btnAgregarEstudiante = document.getElementById("agregarEstudiante");
+    if(btnAgregarEstudiante){
+        btnAgregarEstudiante.addEventListener("click", function(){
+            var id = tablaEstudiantes.rows.length+1;
+            var nombre = prompt("Ingrese el nombre del estudiante")
+            if (nombre){
+                agregarFila(tablaEstudiantes, id, nombre);
+            }
+        });
+    }
+    var tablaAsignaturas = document.querySelector("#contenedorAsignaturas table tbody");
+    var btnAgregarAsignatura = document.getElementById("agregarAsignaturas");
+    if(btnAgregarAsignatura){
+        btnAgregarAsignatura.addEventListener("click", function(){
+            var id = tablaAsignaturas.rows.length+1;
+            var nombre = prompt("Ingrese el nombre de la asignatura")
+            if (nombre){
+                agregarFila(tablaAsignaturas, id, nombre);
+            }
+        });
+    }
 });
