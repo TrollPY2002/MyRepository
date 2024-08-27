@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded",function(){
     }
     var tablaAsignaturas = document.querySelector("#contenedorAsignaturas table tbody");
     var btnAgregarAsignatura = document.getElementById("agregarAsignaturas");
+    
     if(btnAgregarAsignatura){
         btnAgregarAsignatura.addEventListener("click", function(){
             var id = tablaAsignaturas.rows.length+1;
@@ -71,5 +72,22 @@ document.addEventListener("DOMContentLoaded",function(){
                 agregarFila(tablaAsignaturas, id, nombre);
             }
         });
+    
     }
+
+    document.querySelectorAll('.btn-eliminar').forEach(boton => { //Se obtienen todos lo elementos con clase btn-eliminar
+        boton.addEventListener('click',  () => {//Obtenemos el boton de cada fila y se agrega el evento click
+            const tr = boton.parentNode.parentNode //Accedemos al tr de cada boton
+            tr.remove() //Eliminamos la fila
+            //sacado de https://es.stackoverflow.com/questions/567656/eliminar-una-fila-de-una-tabla-con-javascript
+        })
+    });
+
+    document.querySelectorAll('.btn-editar').forEach(botton => {
+        boton.addEventListener('click',  () => {//Obtenemos el boton de cada fila y se agrega el evento click
+            console.log("throw");
+        })
+        
+    })
+
 });
